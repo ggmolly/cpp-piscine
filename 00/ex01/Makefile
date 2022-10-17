@@ -1,10 +1,11 @@
 CC = g++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
 NAME = phonebook
 
 SRCS = main.cpp \
-		Contact.cpp
+		Contact.cpp \
+		PhoneBook.cpp
 
 
 OBJS = $(SRCS:.cpp=.o)
@@ -25,4 +26,4 @@ re: fclean all
 
 all: $(NAME)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test
