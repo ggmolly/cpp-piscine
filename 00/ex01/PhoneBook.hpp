@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 12:28:09 by jallerha          #+#    #+#             */
-/*   Updated: 2022/10/17 14:09:49 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/10/31 18:29:38 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define RESETNL "\033[0m\n"
 
 # ifndef DEBUG
-#  define DEBUG true
+#  define DEBUG 0
 # endif
 
 class PhoneBook
