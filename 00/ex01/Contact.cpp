@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 12:37:42 by jallerha          #+#    #+#             */
-/*   Updated: 2022/10/17 14:09:03 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:58:33 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,27 +61,47 @@ void	Contact::getInfos(int index)
 	while (this->_firstName.empty())
 	{
 		std::cout << "First name: ";
-		std::getline(std::cin, this->_firstName);
+		if (!std::getline(std::cin, this->_firstName))
+		{
+			std::cout << std::endl;
+			return;
+		}
 	}
 	while (this->_lastName.empty())
 	{
 		std::cout << "Last name: ";
-		std::getline(std::cin, this->_lastName);
+		if (!std::getline(std::cin, this->_lastName))
+		{
+			std::cout << std::endl;
+			return;
+		}
 	}
 	while (this->_nickName.empty())
 	{
 		std::cout << "Nickname: ";
-		std::getline(std::cin, this->_nickName);
+		if (!std::getline(std::cin, this->_nickName))
+		{
+			std::cout << std::endl;
+			return;
+		}
 	}
 	while (this->_phoneNumber.empty() || !this->_verifyPhone())
 	{
 		std::cout << "Phone number: ";
-		std::getline(std::cin, this->_phoneNumber);
+		if (!std::getline(std::cin, this->_phoneNumber))
+		{
+			std::cout << std::endl;
+			return;
+		}
 	}
 	while (this->_darkestSecret.empty())
 	{
 		std::cout << "Darkest secret: ";
-		std::getline(std::cin, this->_darkestSecret);
+		if (!std::getline(std::cin, this->_darkestSecret))
+		{
+			std::cout << std::endl;
+			return;
+		}
 	}
 	this->_index = index;
 }
