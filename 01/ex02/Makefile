@@ -1,5 +1,5 @@
 CXX := c++
-CPPFLAGS := -Wall -Wextra -Werror -std=c++98
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 NAME = brain
 
@@ -8,10 +8,10 @@ SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 .cpp:.o
-	${CXX} $(CPPFLAGS) -c $< -o $@
+	${CXX} $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	${CXX} $(CPPFLAGS) -o $(NAME) $(OBJS)
+	${CXX} $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)
