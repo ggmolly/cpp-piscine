@@ -1,10 +1,11 @@
 CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -g3
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 NAME = better_sed
 
 SRCS = main.cpp \
 		error.cpp \
+		replace.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   betterSed.hpp                                      :+:      :+:    :+:   */
+/*   replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 23:19:24 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/02 13:41:18 by jallerha         ###   ########.fr       */
+/*   Created: 2022/11/02 12:28:14 by jallerha          #+#    #+#             */
+/*   Updated: 2022/11/02 13:56:40 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "betterSed.hpp"
 
-# include <string>
-# include <iostream>
-# include <fstream>
-
-# define RED "\033[1;31m"
-# define GREEN "\033[1;32m"
-# define RESET "\033[0m"
-
-void	print_error(std::string description);
-void	str_replace(std::string &haystack, std::string &from, std::string &to);
+void	str_replace(std::string &haystack, std::string &from, std::string &to)
+{
+	if (from == to)
+		return ;
+	while (true)
+	{
+		std::size_t index = haystack.find(from);
+		if (index == std::string::npos)
+			break ;
+		else
+		{
+			haystack.erase(index, from.size());
+			haystack.insert(index, to);
+		}
+	}
+}
