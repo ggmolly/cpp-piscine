@@ -1,0 +1,15 @@
+#!/bin/bash
+echo -e ">>> ERROR LEVEL (should print only an error) <<<"
+./HarlFilter "ERROR"
+echo -e "\n>>> WARNING LEVEL (should print warning and error) <<<"
+./HarlFilter "WARNING"
+echo -e "\n>>> INFO LEVEL (should print info, warning and error) <<<"
+./HarlFilter "INFO"
+echo -e "\n>>> DEBUG LEVEL (should print debug, info, warning and error) <<<"
+./HarlFilter "DEBUG"
+echo -e "\n>>> NO ARGS (should print a default message) <<<"
+./HarlFilter
+echo -e "\n>>> WRONG ARGS (should print a default message) <<<"
+./HarlFilter "WRONG"
+echo -e "\n>>> MULTIPLE ARGS (should print a default message) <<<"
+./HarlFilter "ERROR" "WARNING"
