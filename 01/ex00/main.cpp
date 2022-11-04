@@ -6,11 +6,11 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 18:59:39 by jallerha          #+#    #+#             */
-/*   Updated: 2022/10/31 19:55:37 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/04 11:45:21 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Zombie.hpp"
 
 int main() {
 	Zombie *foo = newZombie("Foo");
