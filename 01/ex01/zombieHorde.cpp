@@ -6,17 +6,17 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 21:32:46 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/02 15:41:28 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/04 11:50:59 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Zombie.hpp"
 
 Zombie* zombieHorde(int N, std::string name)
 {
 	if (N <= 0)
 	{
-		std::cout << "Invalid N for horde.";
+		std::cout << RED << "Invalid N for horde." << RESET << std::endl;
 		return (NULL);
 	}
 	Zombie *zombies = new Zombie[N];
