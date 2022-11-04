@@ -84,4 +84,4 @@ echo -e "\nafter : \n"
 cat file2.replace
 
 cd ..
-# rm -rf tests
+rm -rf tests
