@@ -6,14 +6,14 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 22:00:55 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/01 22:19:34 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/04 01:30:13 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <string>
 #include <iostream>
 
-#pragma once
 class Weapon
 {
 	private:

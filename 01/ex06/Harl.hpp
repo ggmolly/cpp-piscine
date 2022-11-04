@@ -6,10 +6,11 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:07:16 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/02 14:55:20 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/04 01:30:35 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 
 class Harl

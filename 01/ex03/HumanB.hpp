@@ -6,13 +6,13 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 22:11:01 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/01 23:14:40 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/04 01:30:09 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "Weapon.hpp"
 
-#pragma once
 class HumanB
 {
 	private:
