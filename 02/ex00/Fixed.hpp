@@ -6,9 +6,12 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:34:52 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/03 14:43:52 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/03 23:11:18 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
+#include <iostream>
 
 class Fixed
 {
