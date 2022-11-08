@@ -6,36 +6,27 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:39:53 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/08 13:56:28 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:37:49 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	this->_name = "ScavTrap";
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
 	std::cout << "Default ScavTrap constructor called." << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
 {
-	this->_name = "ScavTrap";
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->_name = name;
 	std::cout << "ScavTrap '" << name << "' constructor called." << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap &ref)
+ScavTrap::ScavTrap(ScavTrap &ref) : ClapTrap()
 {
 	std::cout << "ScavTrap copy constructor called." << std::endl;
-	if (this != &ref)
-		*this = ref;
-	return;
+	*this = ref;
 }
 
 ScavTrap::~ScavTrap(void)
