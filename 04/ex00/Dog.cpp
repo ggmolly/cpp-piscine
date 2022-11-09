@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:57:19 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/09 17:08:31 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:25:15 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,4 @@ Dog &Dog::operator=(Dog &Dog)
 void Dog::makeSound(void) const
 {
 	std::cout << "*bark bark*" << std::endl;
-}
-
-std::string	Dog::getType(void)
-{
-	return this->_type;
 }

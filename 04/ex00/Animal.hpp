@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:39:45 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/09 17:15:53 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:26:18 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Animal
 	public:
 		Animal(void);
 		Animal(Animal &animal);
-		~Animal(void);
+		virtual ~Animal(void);
 		Animal &operator=(Animal &animal);
-		void		makeSound(void) const;
-		std::string	getType(void);
+		virtual void makeSound(void) const;
+		std::string	 getType(void) const;
 };

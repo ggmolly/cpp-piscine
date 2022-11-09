@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:41:16 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/09 17:10:03 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:25:56 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	Animal::makeSound(void) const
 	std::cout << "*default noise*" << std::endl;
 }
 
-std::string	Animal::getType(void)
+std::string	Animal::getType(void) const
 {
 	return this->_type;
 }

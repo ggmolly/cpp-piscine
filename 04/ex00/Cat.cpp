@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:48:12 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/09 17:08:23 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:25:11 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,4 @@ Cat &Cat::operator=(Cat &cat)
 void Cat::makeSound(void) const
 {
 	std::cout << "*purrrrr*" << std::endl;
-}
-
-std::string	Cat::getType(void)
-{
-	return this->_type;
 }

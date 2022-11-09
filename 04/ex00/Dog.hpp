@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:57:01 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/09 17:16:02 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:25:19 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ class Dog : public Animal
 		~Dog(void);
 		Dog &operator=(Dog &Dog);
 		void		makeSound(void) const;
-		std::string	getType(void);
 };
