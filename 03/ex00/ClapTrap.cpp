@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:55:36 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/07 23:01:10 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:48:37 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,9 +104,23 @@ void ClapTrap::attack(const std::string& target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (amount > static_cast<unsigned int>(_hitPoints))
+	{
+		#if PRETTY
+			std::cout << "║ Take damage   ║ " << std::setw(10) << _name << " ║ Dies                           ║" << "     ✅     ║" << std::endl;
+		#else
+			std::cout << "'" << _name << "' is already dead" << std::endl;
+		#endif
 		_hitPoints = 0;
+	}
 	else
+	{
+		#if PRETTY
+			std::cout << "║ Take damage   ║ " << std::setw(10) << _name << " ║ Gets hit for " << std::setw(17) << amount << " ║" << "     ✅     ║" << std::endl;
+		#else
+			std::cout << "'" << _name << "' took " << amount << " damages!" << std::endl;
+		#endif
 		_hitPoints -= amount;
+	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 22:10:16 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/07 23:01:34 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:49:20 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,23 @@ int	main(void)
 		for (size_t i = 0; i < 5; i++)
 		{
 			clap1.attack("Ariel");
-			clap2.takeDamage(1);
 		}
 		clap1.takeDamage(100);
 		clap1.attack("Ariel");
 		for (size_t i = 0; i < 11; i++)
 		{
 			clap2.attack("Alice");
-			clap1.takeDamage(1);
 		}
 		clap1.beRepaired(100);
 		clap2.beRepaired(100);
+		clap2.attack("Alice");
+		clap1.attack("Ariel");
+	}
+	{
+		ClapTrap clap1("Alice");
+		clap1.takeDamage(8000);
+		clap1.attack("Someone");
+		clap1.beRepaired(100);
 	}
 	#if PRETTY
 		std::cout << "╚═══════════════╩════════════╩════════════════════════════════╩════════════╝" << std::endl;
