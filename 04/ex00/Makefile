@@ -1,12 +1,15 @@
 CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+INCLUDE_FLAGS := -I includes/
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98 ${INCLUDE_FLAGS}
 
 NAME = polymorphism
 
-SRCS = main.cpp \
-		Cat.cpp \
-		Dog.cpp \
-		Animal.cpp \
+SRCS = srcs/main.cpp \
+		srcs/Cat.cpp \
+		srcs/Dog.cpp \
+		srcs/Animal.cpp \
+		srcs/WrongAnimal.cpp \
+		srcs/WrongCat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
