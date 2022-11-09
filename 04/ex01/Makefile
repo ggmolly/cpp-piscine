@@ -1,6 +1,6 @@
 CXX := c++
 INCLUDE_FLAGS := -I includes/
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98 ${INCLUDE_FLAGS} -g3
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98 ${INCLUDE_FLAGS}
 
 NAME = brain
 
