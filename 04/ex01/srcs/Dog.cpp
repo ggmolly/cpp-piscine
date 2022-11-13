@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:57:19 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/09 23:43:19 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/13 15:22:18 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ Dog::Dog(void): Animal()
 	this->_brain = new Brain();
 }
 
-Dog::Dog(Dog &Dog): Animal()
+Dog::Dog(Dog &dog): Animal()
 {
 	std::cout << "Dog copy constructor called." << std::endl;
-	if (this != &Dog)
-		*this = Dog;
+	if (this != &dog)
+	{
+		this->_type = dog.getType();
+		this->_brain = new Brain(*dog.getBrain());
+	}
 }
 
 Dog::~Dog(void)
@@ -36,7 +39,11 @@ Dog &Dog::operator=(Dog &Dog)
 {
 	std::cout << "Dog copy assignment operator called." << std::endl;
 	if (this != &Dog)
+	{
 		this->_type = Dog._type;
+		delete this->_brain;
+		this->_brain = new Brain(*Dog._brain);
+	}
 	return *this;
 }
 
