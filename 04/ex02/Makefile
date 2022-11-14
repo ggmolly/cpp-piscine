@@ -1,6 +1,6 @@
 CXX := c++
 INCLUDE_FLAGS := -I includes/
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98 ${INCLUDE_FLAGS}
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98 ${INCLUDE_FLAGS} -MMD
 
 NAME = no
 
@@ -19,6 +19,8 @@ OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
 	${CXX} $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+-include $(OBJS:.o=.d)
 
 clean:
 	rm -f $(OBJS)
