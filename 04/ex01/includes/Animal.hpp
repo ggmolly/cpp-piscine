@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:39:45 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/10 00:10:42 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/14 12:53:07 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ class Animal
 		Animal &operator=(Animal &animal);
 		virtual void makeSound(void) const;
 		std::string	 getType(void) const;
-		virtual Brain *getBrain(void) const = 0;
 };
