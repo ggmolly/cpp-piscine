@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:58:16 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/13 15:19:40 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/14 11:35:23 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # define RED1 "\033[38;5;196m"
 # define RESET "\033[0m"
 # define YELLOW1 "\033[38;5;226m"
+# define PLUM2 "\033[38;5;183m"
 
 # define N_ANIMALS 4
 
@@ -96,11 +97,11 @@ int main(void)
 	{
 		if (animals[i]->getBrain()->getIdea(0) == "Idea changed")
 		{
-			std::cout << RED1 << "Brain copy failed" << RESET << YELLOW1 << " -- " << animals[i]->getBrain() << " / " << copies[i]->getBrain() << RESET << std::endl;
+			std::cout << RED1 << "Brain copy failed" << RESET << YELLOW1 << " -- " << PLUM2 << animals[i]->getBrain() << " / " << copies[i]->getBrain() << RESET << std::endl;
 		}
 		else
 		{
-			std::cout << SPRINGGREEN3 << "Brain copy success" << RESET << YELLOW1 << " -- " << animals[i]->getBrain() << " / " << copies[i]->getBrain() << RESET << std::endl;
+			std::cout << SPRINGGREEN3 << "Brain copy success" << RESET << YELLOW1 << " -- " << PLUM2 << animals[i]->getBrain() << " / " << copies[i]->getBrain() << RESET << std::endl;
 		}
 	}
 	std::cout << "========= Destroy animals =========" << std::endl;
