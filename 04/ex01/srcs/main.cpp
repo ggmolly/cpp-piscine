@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:58:16 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/14 11:35:23 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/14 13:10:40 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,58 +60,56 @@ int main(void)
 	for (size_t i = 0; i < N_ANIMALS / 2; i++)
 	{
 		animals[i] = new Dog();
-		fillBrain((Dog *)animals[i]);
 	}
 	for (size_t i = N_ANIMALS / 2; i < N_ANIMALS; i++)
 	{
 		animals[i] = new Cat();
-		fillBrain((Cat *)animals[i]);
 	}
 	std::cout << "========= Checking sounds =========" << std::endl;
 	for (size_t i = 0; i < N_ANIMALS; i++)
 	{
 		animals[i]->makeSound();
 	}
-	std::cout << "========= Checking addresses =========" << std::endl;
-	for (size_t i = 0; i < N_ANIMALS; i++)
-	{
-		std::cout << animals[i]->getBrain() << std::endl;
-	}
-	std::cout << "========= Testing brain copy =========" << std::endl;
-	// Create a copy of last animal
-	Animal *copies[N_ANIMALS];
-	// Use copy constructors
-	for (size_t i = 0; i < N_ANIMALS / 2; i++)
-	{
-		copies[i] = new Dog(*(Dog *)animals[i]);
-	}
-	for (size_t i = N_ANIMALS / 2; i < N_ANIMALS; i++)
-	{
-		copies[i] = new Cat(*(Cat *)animals[i]);
-	}
-	for (size_t i = 0; i < N_ANIMALS; i++)
-	{
-		copies[i]->getBrain()->setIdea(0, "Idea changed");
-	}
-	for (size_t i = 0; i < N_ANIMALS; i++)
-	{
-		if (animals[i]->getBrain()->getIdea(0) == "Idea changed")
-		{
-			std::cout << RED1 << "Brain copy failed" << RESET << YELLOW1 << " -- " << PLUM2 << animals[i]->getBrain() << " / " << copies[i]->getBrain() << RESET << std::endl;
-		}
-		else
-		{
-			std::cout << SPRINGGREEN3 << "Brain copy success" << RESET << YELLOW1 << " -- " << PLUM2 << animals[i]->getBrain() << " / " << copies[i]->getBrain() << RESET << std::endl;
-		}
-	}
-	std::cout << "========= Destroy animals =========" << std::endl;
+	std::cout << "========= Delete animal =========" << std::endl;
 	for (size_t i = 0; i < N_ANIMALS; i++)
 	{
 		delete animals[i];
 	}
-	std::cout << "========= Destroy copies =========" << std::endl;
-	for (size_t i = 0; i < N_ANIMALS; i++)
+	Cat *cat = new Cat();
+	Dog *dog = new Dog();
+	fillBrain(cat);
+	fillBrain(dog);
+	Cat *copyCat = new Cat(*cat);
+	Dog *copyDog = new Dog(*dog);
+	std::cout << "========= Checking addresses =========" << std::endl;
+	std::cout << "Cat: " << cat->getBrain() << std::endl;
+	std::cout << "Dog: " << dog->getBrain() << std::endl;
+	std::cout << "CopyCat: " << copyCat->getBrain() << std::endl;
+	std::cout << "CopyDog: " << copyDog->getBrain() << std::endl;
+	std::cout << "========= Testing brain copy =========" << std::endl;
+	copyCat->getBrain()->setIdea(0, "Idea changed");
+	copyDog->getBrain()->setIdea(0, "Idea changed");
+	if (cat->getBrain()->getIdea(0) == "Idea changed")
 	{
-		delete copies[i];
+		std::cout << RED1 << "Brain copy failed" << RESET << YELLOW1 << " -- " << PLUM2 << cat->getBrain() << " / " << copyCat->getBrain() << RESET << std::endl;
 	}
+	else
+	{
+		std::cout << SPRINGGREEN3 << "Brain copy success" << RESET << YELLOW1 << " -- " << PLUM2 << cat->getBrain() << " / " << copyCat->getBrain() << RESET << std::endl;
+	}
+	if (dog->getBrain()->getIdea(0) == "Idea changed")
+	{
+		std::cout << RED1 << "Brain copy failed" << RESET << YELLOW1 << " -- " << PLUM2 << dog->getBrain() << " / " << copyDog->getBrain() << RESET << std::endl;
+	}
+	else
+	{
+		std::cout << SPRINGGREEN3 << "Brain copy success" << RESET << YELLOW1 << " -- " << PLUM2 << dog->getBrain() << " / " << copyDog->getBrain() << RESET << std::endl;
+	}
+	delete cat;
+	delete dog;
+	delete copyCat;
+	delete copyDog;
+	std::cout << "========= Creating generic Animal =========" << std::endl;
+	Animal a;
+	a.makeSound();
 }
