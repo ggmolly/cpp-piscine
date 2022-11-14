@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:58:16 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/13 14:51:35 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/14 11:34:32 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int main(void)
 		const Animal *dog = new Dog();
 		const Animal *cat = new Cat();
 
-		std::cout << PLUM1 << "Generic animal says: " << SPRINGGREEN1;
+		std::cout << PLUM1 << "Generic (type=" << generic->getType()  << ") says: " << SPRINGGREEN1;
 		generic->makeSound();
-		std::cout << PLUM2 << "Dog says: " << SPRINGGREEN1;
+		std::cout << PLUM2 << "Dog (type=" << dog->getType()  << ") says: " << SPRINGGREEN1;
 		dog->makeSound();
-		std::cout << PLUM3 << "Cat says: " << SPRINGGREEN1;
+		std::cout << PLUM3 << "Cat (type=" << cat->getType()  << ") says: " << SPRINGGREEN1;
 		cat->makeSound();
 		std::cout << RED1 << "-------------------------" << RESET << std::endl;
 		delete generic;
@@ -47,9 +47,9 @@ int main(void)
 		const WrongAnimal *wrong = new WrongAnimal();
 		const WrongAnimal *wrongCat = new WrongCat();
 
-		std::cout << PLUM4 << "Wrong animal says: " << SPRINGGREEN1;
+		std::cout << PLUM4 << "Wrong (type=" << wrong->getType() << ") animal says: " << SPRINGGREEN1;
 		wrong->makeSound();
-		std::cout << PLUM1 << "WrongCat says: " << SPRINGGREEN1;
+		std::cout << PLUM1 << "WrongCat (type=" << wrongCat->getType() << ") says: " << SPRINGGREEN1;
 		wrongCat->makeSound();
 		std::cout << RED1 << "-------------------------" << RESET << std::endl;
 		delete wrong;
@@ -59,7 +59,7 @@ int main(void)
 	{
 		const WrongCat *wrongCat = new WrongCat();
 
-		std::cout << PLUM1 << "WrongCat says: " << SPRINGGREEN1;
+		std::cout << PLUM1 << "WrongCat (type=" << wrongCat->getType() << ") says: " << SPRINGGREEN1;
 		wrongCat->makeSound();
 		std::cout << RED1 << "-------------------------" << RESET << std::endl;
 		delete wrongCat;
