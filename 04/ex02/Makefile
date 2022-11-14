@@ -13,6 +13,7 @@ SRCS = srcs/main.cpp \
 		srcs/Brain.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
+DEPS = $(SRCS:.cpp=.d)
 
 .cpp:.o
 	${CXX} $(CXXFLAGS) -c $< -o $@
@@ -23,7 +24,7 @@ $(NAME): $(OBJS)
 -include $(OBJS:.o=.d)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(DEPS)
 
 fclean: clean
 	rm -f $(NAME)
