@@ -14,7 +14,7 @@ DEPS = $(SRCS:.cpp=.d)
 .cpp:.o
 	${CXX} $(CXXFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) Makefile
 	${CXX} $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 -include $(OBJS:.o=.d)
@@ -35,7 +35,7 @@ leak-test: all
 	valgrind --leak-check=full --show-below-main=yes --show-leak-kinds=all ./$(NAME)
 
 scan-build: fclean clean
-	scan-build make | grep "^scan-build:"
+	scan-build-12 make | grep "^scan-build:"
 
 pre-push: scan-build leak-test
 	make fclean
