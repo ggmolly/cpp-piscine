@@ -55,4 +55,4 @@ test: all
 	./$(NAME) -12312312312312312312312312364554654564564456456456546456987887879987978789789789978174174147225582583396369369
 	./$(NAME) A
 
-.PHONY: all clean fclean re scan-build pre-push
+.PHONY: all clean fclean re scan-build pre-push test
