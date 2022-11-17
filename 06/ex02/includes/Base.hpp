@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:30:09 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/16 17:06:27 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:10:51 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Base
 	private:
 
 	public:
-		Base(void);
 		virtual ~Base();
 };
 
