@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:04:47 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/16 20:24:38 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/17 21:07:21 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,13 @@ int main(void)
 		std::cout << "min(a, b) = " << min(a, b) << std::endl;
 		std::cout << "max(a, b) = " << max(a, b) << std::endl;
 	}
-	/* ==================== INVALID TESTS (SHOULD NOT COMPILE) ==================== */
-	// int a = 2;
-	// float b = 42.42;
-	// swap(a, b); // should not compile
-	// min(a, b); // should not compile
-	// max(a, b); // should not compile
+	// std::cout << "=========== INVALID TESTS (SHOULD NOT COMPILE) ===========" << std::endl;
+	{
+		// int a = 2;
+		// float b = 42.42;
+		// swap(a, b); // should not compile
+		// min(a, b); // should not compile
+		// max(a, b); // should not compile
+	}
 	return (0);
 }
