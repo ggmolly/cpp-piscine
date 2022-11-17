@@ -2,7 +2,7 @@ CXX := c++
 INCLUDE_FLAGS := -I includes/
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98 ${INCLUDE_FLAGS} -MMD -pedantic
 
-NAME = convert
+NAME = whatever
 
 SRCS = srcs/main.cpp
 
