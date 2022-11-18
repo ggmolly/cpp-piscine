@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:42:50 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/18 16:57:23 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:49:15 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,17 @@ int Span::longestSpan()
 	std::vector<int> sorted = _numbers;
 	std::sort(sorted.begin(), sorted.end());
 	return (sorted.at(sorted.size() - 1) - sorted.at(0));
+}
+
+void Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+	std::vector<int> rangeCopy(start, end);
+	if (_numbers.size() + rangeCopy.size() > _limit)
+		throw std::overflow_error("Not enough space to add range");
+	for (size_t i = 0; i < rangeCopy.size(); i++)
+	{
+		_numbers.push_back(rangeCopy.at(i));
+	}
 }
 
 void Span::print() const

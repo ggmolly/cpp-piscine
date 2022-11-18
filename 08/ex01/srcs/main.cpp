@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 16:24:30 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/18 17:08:28 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:53:14 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,27 @@ int main(void)
 		std::cout << originalSpan << std::endl;
 		std::cout << firstCopy << std::endl;
 		std::cout << secondCopy << std::endl;
+	}
+	std::cout << "╔════════════════╗" << std::endl;
+    std::cout << "║" << LIGHTGOLDENROD1 << "   Range Add    " << RESET << "║" << std::endl;
+    std::cout << "╚════════════════╝" << std::endl;
+	{
+		Span testSpan(30);
+		std::vector<int> ten;
+		for (size_t i = 0; i < 10; i++)
+			ten.push_back(i);
+		for (size_t i = 0; i < 4; i++)
+		{
+			try
+			{
+				testSpan.addRange(ten.begin(), ten.end());
+				std::cout << testSpan << std::endl;
+			}
+			catch(const std::exception &e)
+			{
+				std::cout << RED1 << "Exception caught while adding range : " << e.what() << RESET << std::endl;
+			}
+		}
 	}
 	return 0;
 }

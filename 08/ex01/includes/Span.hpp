@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:39:41 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/18 16:59:45 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:44:52 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ class Span
 		void addNumber(int n);
 		int shortestSpan();
 		int longestSpan();
+		void addRange(std::vector<int>::iterator start, std::vector<int>::iterator end);
 		void print() const;
 };
 
