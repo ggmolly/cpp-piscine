@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 00:27:03 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/18 01:23:15 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:20:17 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define RED1 "\033[38;5;196m"
 # define SPRINGGREEN3 "\033[38;5;47m"
 # define RESET "\033[0m"
+# define MAX_VAL 750
 
 void fillRandom(Array<int> &arr)
 {
@@ -119,5 +120,57 @@ int main(void)
 		tryInit(10000);
 		std::cout << MEDIUMSPRINGGREEN << "Creating array of size 500000" << RESET << std::endl;
 		tryInit(500000);
+	}
+	std::cout << "╔═══════════════════════╗" << std::endl;
+	std::cout << "║" << DODGERBLUE2 << "     SUBJECT TEST      " << RESET << "║" << std::endl;
+	std::cout << "╚═══════════════════════╝" << std::endl;
+	{
+		Array<int> numbers(MAX_VAL);
+		int* mirror = new int[MAX_VAL];
+		srand(time(NULL));
+		for (int i = 0; i < MAX_VAL; i++)
+		{
+			const int value = rand();
+			numbers[i] = value;
+			mirror[i] = value;
+		}
+		//SCOPE
+		{
+			Array<int> tmp ;
+			tmp = numbers;
+			Array<int> test(tmp);
+		}
+
+		for (int i = 0; i < MAX_VAL; i++)
+		{
+			if (mirror[i] != numbers[i])
+			{
+				std::cerr << "didn't save the same value!!" << std::endl;
+				return 1;
+			}
+		}
+		try
+		{
+			numbers[-2] = 0;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		try
+		{
+			numbers[MAX_VAL] = 0;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+
+		for (int i = 0; i < MAX_VAL; i++)
+		{
+			numbers[i] = rand();
+		}
+		delete [] mirror;//
+		return 0;
 	}
 }

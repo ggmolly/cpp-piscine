@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 00:13:23 by jallerha          #+#    #+#             */
-/*   Updated: 2022/11/18 01:19:35 by jallerha         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:20:00 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ template <typename T>
 class Array
 {
 	public:
-		Array(void): _size(0), _array(NULL)
+		Array(void): _array(NULL), _size(0)
 		{
 			std::cout << LIGHTSLATEGREY << "Default array constructor called" << RESET << std::endl;
 		}
@@ -33,14 +33,18 @@ class Array
 				throw InvalidSizeException();
 			std::cout << LIGHTSLATEGREY << "Array constructor called (size=" << size << ")" << RESET << std::endl;
 			_array = new T[size];
-			bzero(_array, sizeof(T) * _size);
+			bzero(_array, sizeof(T) * _size);		
 		}
 
 		Array(Array const &ref)
 		{
 			std::cout << LIGHTSLATEGREY << "Array copy constructor called" << RESET << std::endl;
 			if (this != &ref)
-				*this = ref;
+			{
+				_size = ref._size;
+				_array = new T[_size];
+				memcpy(_array, ref._array, sizeof(T) * _size);
+			}
 		}
 
 		~Array(void)
@@ -60,13 +64,11 @@ class Array
 			std::cout << LIGHTSLATEGREY << "Array assignation operator called" << RESET << std::endl;
 			if (this != &ref)
 			{
-				if (_array)
+				if (this->_size != 0)
 					delete [] _array;
 				_size = ref._size;
 				_array = new T[_size];
-				bzero(_array, sizeof(T) * _size);
-				for (unsigned int i = 0; i < _size; i++)
-					_array[i] = ref._array[i];
+				memcpy(_array, ref._array, sizeof(T) * _size);
 			}
 			return *this;
 		}
