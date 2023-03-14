@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:09:56 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 12:54:40 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:06:39 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,7 +195,13 @@ int main(int argc, char **argv)
 //         }
 //     }
 
-
-//     std::cout << "Testing input file parsing" << std::endl;
-//     std::cout << "---------------------------" << std::endl;
+//     { // Non-existant file
+//         std::cout << MAGENTA2 << "Non-existant file : ";
+//         try {
+//             BitcoinExchange exchange("tests/does_not_exist.csv");
+//             std::cerr << RED2 << "KO!" << RESET << std::endl;
+//         } catch (std::exception &e) {
+//             std::cerr << GREEN2 << "OK!" << RESET << std::endl;
+//         }
+//     }
 // }
