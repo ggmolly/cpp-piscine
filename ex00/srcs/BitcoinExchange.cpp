@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:09:54 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 12:32:59 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:50:03 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,8 @@ bool BitcoinExchange::_parse()
             if (!validDate(date))
                 throw std::invalid_argument("Invalid date found");
             value = line.substr(line.find(",") + 1);
+            if (value.size() == 0)
+                throw std::invalid_argument("Invalid CSV row");
 
             // Try to convert the value to a double
             char *err;
