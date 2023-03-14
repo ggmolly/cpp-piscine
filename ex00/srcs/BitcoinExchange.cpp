@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:09:54 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 17:15:49 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:19:02 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange &rhs)
     if (this != &rhs)
     {
         this->_db_path = rhs._db_path;
-        this->_db = rhs._db;
+        _parse();
     }
     return *this;
 }
