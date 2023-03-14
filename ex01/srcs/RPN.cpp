@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:58:37 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 13:50:08 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:56:13 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,18 @@ RPN::RPN(const std::string &expression) {
     while (expressionStream >> token)
     {
         // Get next token, push it to stack
-        unsigned long tokenNumber;
+        long tokenNumber;
         if (std::istringstream(token) >> tokenNumber)
+        {
+            if (tokenNumber > 10)
+                throw std::invalid_argument("Found number greater than 10");
             _stack.push(tokenNumber);
+        }
         else
         {
-            unsigned long secondOp = _stack.top();
+            long secondOp = _stack.top();
             _stack.pop();
-            unsigned long firstOp = _stack.top();
+            long firstOp = _stack.top();
             _stack.pop();
             switch (token[0])
             {
@@ -85,6 +89,6 @@ RPN::~RPN()
     // std::cerr << "RPN destructor called" << std::endl;
 }
 
-unsigned long RPN::getResult() {
+long RPN::getResult() {
     return this->_result;
 }
