@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:07:17 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 15:44:44 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:06:44 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class PmergeMe
         void sort();
         void chrono();
         const std::vector<int>& getArray() const;
+        const std::list<int>& getList() const;
     private:
         std::vector<int> _vector;
         std::list<int> _list;

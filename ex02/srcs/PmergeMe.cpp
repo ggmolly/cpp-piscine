@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:08:59 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 16:09:20 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:06:39 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,10 +165,16 @@ PmergeMe &PmergeMe::operator=(PmergeMe &rhs)
 {
     if (this == &rhs)
         return *this;
+
     // deep copy of the array
     const std::vector<int>& _ref = rhs.getArray();
     for (size_t i = 0; i < _ref.size(); i++)
         _vector.push_back(_ref[i]);
+
+    // deep copy of the list
+    const std::list<int> &listRef = rhs.getList();
+    for (std::list<int>::iterator it; it != listRef.end(); ++it)
+        _list.push_back(*it);
     return *this;
 }
 
@@ -235,6 +241,10 @@ void PmergeMe::chrono() {
 
 const std::vector<int>& PmergeMe::getArray() const {
     return _vector;
+}
+
+const std::list<int>& PmergeMe::getList() const {
+    return _list;
 }
 
 std::ostream &operator<<(std::ostream &o, PmergeMe const &rhs)
