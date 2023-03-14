@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:09:54 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 12:50:03 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:37:51 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ bool validDate(const std::string &date) {
         unsigned int day = atoul(date.substr(8, 2)); // Day
 
         // Check range
-        if (!(year > 0 && year < 9999)) // yyyy (so 4 digits)
+        if (!(year > 0 && year <= 9999)) // yyyy (so 4 digits)
             return false;
         if (!(month > 0 && month < 13)) // mm (between 1 and 12)
             return false;
