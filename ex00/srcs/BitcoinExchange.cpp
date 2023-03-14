@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:09:54 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 12:50:03 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 14:23:23 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,9 +135,9 @@ bool BitcoinExchange::_parse()
                 throw std::invalid_argument("Invalid CSV row");
 
             // Try to convert the value to a double
-            char *err;
+            char *err = NULL;
             double valueDouble = strtod(value.c_str(), &err);
-            if (*err != '\0') // strtod sets `err` to NULL if the conversion was successful
+            if (!err || *err != '\0') // strtod sets `err` to NULL if the conversion was successful
                 throw std::invalid_argument("Invalid CSV row");
             // if the parsing was successful, add the value to the map
             this->_db[date] = valueDouble;
