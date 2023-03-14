@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:58:37 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 16:50:32 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:52:36 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ RPN::RPN(const std::string &expression) {
         }
         else
         {
+            if (_stack.size() != 2)
+                throw std::invalid_argument("Invalid expression");
             long secondOp = _stack.top();
             _stack.pop();
             long firstOp = _stack.top();
