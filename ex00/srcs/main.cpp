@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:09:56 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 16:32:32 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:34:19 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int main(int argc, char **argv)
         std::string path = argv[1];
         parseInput(path, exchange);
     } catch (std::exception &e) {
-        std::cerr << "Unable to load the Bitcoin database : " << e.what() << std::endl;
+        std::cerr << "An error occured : " << e.what() << std::endl;
         return (1);
     }
 }
