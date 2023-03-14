@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:09:56 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 17:16:36 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:34:19 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ void parseInput(const std::string &path, BitcoinExchange &exchange) {
             }
         }
     }
-    inputStream.close();
 }
 
 int main(int argc, char **argv)
@@ -99,9 +98,14 @@ int main(int argc, char **argv)
         return (1);
     }
 
-    BitcoinExchange exchange;
-    BitcoinExchange exchange2(exchange);
-    BitcoinExchange exchange3 = exchange;
+    try {
+        BitcoinExchange exchange;
+        std::string path = argv[1];
+        parseInput(path, exchange);
+    } catch (std::exception &e) {
+        std::cerr << "An error occured : " << e.what() << std::endl;
+        return (1);
+    }
 }
 
 
