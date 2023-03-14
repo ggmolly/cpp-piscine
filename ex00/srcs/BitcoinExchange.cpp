@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:09:54 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 16:37:51 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:15:49 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,10 @@ bool BitcoinExchange::_parse()
                 line = line.substr(line.find(",") + 1);
             }
             if (commaCount != 1) // we have more than one row
+            {
+                fileStream.close();
                 throw std::invalid_argument("Invalid CSV header");
+            }
             headerParsed = true;
         } else {
             // Parse a CSV line
@@ -129,20 +132,30 @@ bool BitcoinExchange::_parse()
             // Get the date
             date = line.substr(0, line.find(","));
             if (!validDate(date))
+            {
+                fileStream.close();
                 throw std::invalid_argument("Invalid date found");
+            }
             value = line.substr(line.find(",") + 1);
             if (value.size() == 0)
+            {
+                fileStream.close();
                 throw std::invalid_argument("Invalid CSV row");
+            }
 
             // Try to convert the value to a double
             char *err;
             double valueDouble = strtod(value.c_str(), &err);
             if (*err != '\0') // strtod sets `err` to NULL if the conversion was successful
+            {
+                fileStream.close();
                 throw std::invalid_argument("Invalid CSV row");
+            }
             // if the parsing was successful, add the value to the map
             this->_db[date] = valueDouble;
         }
     }
+    fileStream.close();
     return true;
 }
 
