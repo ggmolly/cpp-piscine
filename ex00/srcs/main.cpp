@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:09:56 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 13:06:39 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:32:32 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void parseInput(const std::string &path, BitcoinExchange &exchange) {
                 std::cerr << "Negative value : '" << line << "' -- Skipping." << std::endl;
                 continue ;
             }
-            if (valueDouble > INT_MAX)
+            if (valueDouble > 1000)
             {
                 std::cerr << "Value too high : '" << line << "' -- Skipping." << std::endl;
                 continue ;
