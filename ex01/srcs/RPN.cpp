@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:58:37 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 13:56:13 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:50:32 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ RPN::RPN(const std::string &expression) {
         long tokenNumber;
         if (std::istringstream(token) >> tokenNumber)
         {
-            if (tokenNumber > 10)
+            if (tokenNumber >= 10)
                 throw std::invalid_argument("Found number greater than 10");
             _stack.push(tokenNumber);
         }
