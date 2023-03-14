@@ -6,11 +6,12 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:08:59 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 15:45:14 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:09:20 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+#include <cmath>
 #include <iostream>
 #include <ctime>
 
@@ -151,6 +152,10 @@ PmergeMe::PmergeMe(int argc, char **argv)
             throw std::invalid_argument("Invalid value " + std::string(argv[i]));
         if (d > INT_MAX || d < 0)
             throw std::out_of_range("Value " + std::string(argv[i]) + " out of range (int type)");
+        float w, f;
+        f = std::modf(d, &w);
+        if (f != 0)
+            throw std::invalid_argument("Value " + std::string(argv[i]) + " is not an integer");
         _vector.push_back(d);
         _list.push_back(d);
     }
