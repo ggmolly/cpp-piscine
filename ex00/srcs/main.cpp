@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:09:56 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 12:37:16 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:54:40 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 #include <fstream>
 #include <climits>
 #include "BitcoinExchange.hpp"
+
+#define GREEN2 "\033[1;32m"
+#define RED2 "\033[1;31m"
+#define MAGENTA2 "\033[1;35m"
+#define RESET "\033[0m"
 
 /**
  * @brief Parse the passed input file and prints the result to the standard output
@@ -28,7 +33,7 @@ void parseInput(const std::string &path, BitcoinExchange &exchange) {
     if (!inputStream.good())
         throw std::invalid_argument("Unable to open the input file");
     std::string line;
-    bool headerParsed;
+    bool headerParsed = false;
     // Parse the input file
     while (std::getline(inputStream, line))
     {
@@ -102,3 +107,95 @@ int main(int argc, char **argv)
         return (1);
     }
 }
+
+
+// Un-comment to test parsing
+// int main(void)
+// {
+//     std::cout << "Testing exchange values parsing" << std::endl;
+//     std::cout << "-------------------------------" << std::endl;
+    
+//     { // Missing date, should throw
+//         std::cout << MAGENTA2 << "Missing date : ";
+//         try {
+//             BitcoinExchange exchange("tests/empty_date.csv");
+//             std::cerr << RED2 << "KO!" << RESET << std::endl;
+//         } catch (std::exception &e) {
+//             std::cerr << GREEN2 << "OK!" << RESET << std::endl;
+//         }
+//     }
+
+//     { // Invalid date format, should throw
+//         std::cout << MAGENTA2 << "Invalid date format : ";
+//         try {
+//             BitcoinExchange exchange("tests/invalid_date_format.csv");
+//             std::cerr << RED2 << "KO!" << RESET << std::endl;
+//         } catch (std::exception &e) {
+//             std::cerr << GREEN2 << "OK!" << RESET << std::endl;
+//         }
+//     }
+
+//     { // Invalid month, should throw
+//         std::cout << MAGENTA2 << "Invalid month : ";
+//         try {
+//             BitcoinExchange exchange("tests/invalid_month.csv");
+//             std::cerr << RED2 << "KO!" << RESET << std::endl;
+//         } catch (std::exception &e) {
+//             std::cerr << GREEN2 << "OK!" << RESET << std::endl;
+//         }
+//     }
+
+//     { // Missing column
+//         std::cout << MAGENTA2 << "Missing column : ";
+//         try {
+//             BitcoinExchange exchange("tests/missing_col.csv");
+//             std::cerr << RED2 << "KO!" << RESET << std::endl;
+//         } catch (std::exception &e) {
+//             std::cerr << GREEN2 << "OK!" << RESET << std::endl;
+//         }
+//     }
+
+//     { // Missing date
+//         std::cout << MAGENTA2 << "Missing date : ";
+//         try {
+//             BitcoinExchange exchange("tests/no_date.csv");
+//             std::cerr << RED2 << "KO!" << RESET << std::endl;
+//         } catch (std::exception &e) {
+//             std::cerr << GREEN2 << "OK!" << RESET << std::endl;
+//         }
+//     }
+
+//     { // No read permissions
+//         std::cout << MAGENTA2 << "No read permissions : ";
+//         try {
+//             BitcoinExchange exchange("tests/no_read.csv");
+//             std::cerr << RED2 << "KO!" << RESET << std::endl;
+//         } catch (std::exception &e) {
+//             std::cerr << GREEN2 << "OK!" << RESET << std::endl;
+//         }
+//     }
+
+//     { // Missing value
+//         std::cout << MAGENTA2 << "Missing value : ";
+//         try {
+//             BitcoinExchange exchange("tests/no_val.csv");
+//             std::cerr << RED2 << "KO!" << RESET << std::endl;
+//         } catch (std::exception &e) {
+//             std::cerr << GREEN2 << "OK!" << RESET << std::endl;
+//         }
+//     }
+
+//     { // Valid file
+//         std::cout << MAGENTA2 << "Valid file : ";
+//         try {
+//             BitcoinExchange exchange("tests/valid_data.csv");
+//             std::cerr << GREEN2 << "OK!" << RESET << std::endl;
+//         } catch (std::exception &e) {
+//             std::cerr << RED2 << "KO!" << RESET << std::endl;
+//         }
+//     }
+
+
+//     std::cout << "Testing input file parsing" << std::endl;
+//     std::cout << "---------------------------" << std::endl;
+// }
