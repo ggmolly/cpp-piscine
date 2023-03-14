@@ -6,7 +6,7 @@
 /*   By: jallerha <jallerha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 13:04:46 by jallerha          #+#    #+#             */
-/*   Updated: 2023/03/14 13:46:41 by jallerha         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:55:22 by jallerha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ class RPN
         RPN &operator=(RPN &ref);
         RPN(RPN &src);
         ~RPN();
-        unsigned long getResult();
+        long getResult();
     private:
         std::string _expression;
-        unsigned long _result;
-        std::stack<unsigned long> _stack;
+        long _result;
+        std::stack<long> _stack;
 };
