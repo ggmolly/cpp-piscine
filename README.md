@@ -1,9 +1,7 @@
-## 🏊 42's C++ Piscine
+## ⚠️ Regarding CPP Module 09
 
-The piscine's goal is to make us learn C++98
+I would like to share that I undertook a personal challenge to complete the CPP Module 09 in just a few hours after it was published. In my pursuit of speed, I leveraged every point that wasn't clear in the subject at the beginning to finish the module as quickly as possible.
 
-### 🕵️ Review of my code
+However, this approach resulted in extremely messy code. I prioritized speed over cleanliness, which is not a practice I would recommend for regular development work. Moreover, the final code does not align with the subject anymore.
 
-My code is kinda dirty in first modules (I'd say from `00` to `02~03`) but it works
-
-Every modules after the third (or fourth) one are properly implemented and contains explicit tests
+Therefore, I strongly advise anyone who comes across this module to disregard the solutions for this last module, including the test cases.
